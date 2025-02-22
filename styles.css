@@ -8,8 +8,8 @@
 }
 
 body {
-  background-color: #d27c60;
-  color: #14d0bf;
+  background-color: #14d0bf;
+  color: #d27c60;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -27,7 +27,7 @@ body {
   text-decoration: none;
   text-align: center;
   display: block;
-  color: #14d0bf;
+  color: #d27c60;
 }
 
 .game-tile {
