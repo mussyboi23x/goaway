@@ -1,12 +1,11 @@
 :root {
     --bg-color: #f5f5f0; /* Light beige/off-white */
-    --text-color: #333; /* Dark gray/charcoal */
+    --text-color: #DAF7A6; /* Dark gray/charcoal */
     --accent-color: #a52a2a; /* Brown accent (e.g., for links) */
     --game-tile-color: #e8e8e0; /* light grey for tiles */
-    --game-tile-popular: #d32f2f; /* A slightly darker red */
-    --nav-bg: #333; /* Dark background for navigation */
+    --nav-bg: #DAF7A6; /* Dark background for navigation */
     --nav-text: #f0f0f0; /* Light text for navigation */
-    --nav-hover: #ddd; /* Light hover color for navigation */
+    --nav-hover: #00FF00; /* Light hover color for navigation */
     --search-border: #d32f2f;
 }
 
