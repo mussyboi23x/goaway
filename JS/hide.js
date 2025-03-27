@@ -1,5 +1,5 @@
     var urlObj = new window.URL(window.location.href);
-    var url = "https://games-site.github.io/";
+    var url = "https://mussabthegoat.netlify.app/";
  
     if (url) {
         var win;
