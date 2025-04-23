@@ -16,8 +16,9 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-            width: 200px; /* Increased size */
-            height: 200px;
+            width: 240px;
+            height: 240px;
+            z-index: 10;
         }
     </style>
 </head>
@@ -58,17 +59,19 @@
         container.appendChild(player);
         player.load("bubble-tanks-2.swf");
 
-        // Setup joystick
+        // Create joystick
         const joystick = nipplejs.create({
             zone: document.getElementById('joystick-zone'),
             mode: 'static',
-            position: { left: '100px', bottom: '100px' }, // center of joystick zone
-            size: 150, // Larger thumb
+            position: { left: '120px', bottom: '120px' },
+            size: 180,
             color: 'white',
             restOpacity: 0.5
         });
 
-        const DEADZONE = 20; // pixels
+        const DEADZONE = 40;
+        const INACTIVITY_TIMEOUT = 1500;
+        let inactivityTimer = null;
 
         const keyMap = {
             up: 'KeyW',
@@ -89,30 +92,52 @@
 
         let activeDirections = {};
 
-        joystick.on('move', (evt, data) => {
-            if (data.distance < DEADZONE) return;
+        function clearAllDirections() {
+            for (const key of Object.keys(activeDirections)) {
+                triggerKey(keyMap[key], 'keyup');
+            }
+            activeDirections = {};
+        }
 
-            const dir = data.direction.angle;
+        joystick.on('move', (evt, data) => {
+            clearTimeout(inactivityTimer);
+
+            if (data.distance < DEADZONE) {
+                clearAllDirections();
+                return;
+            }
+
+            const dir = data.direction?.angle;
+            if (!dir) {
+                clearAllDirections(); // pause movement if no clear direction
+                return;
+            }
+
             const directions = {
-                up: dir === 'up' || dir === 'up-left' || dir === 'up-right',
-                down: dir === 'down' || dir === 'down-left' || dir === 'down-right',
-                left: dir === 'left' || dir === 'up-left' || dir === 'down-left',
-                right: dir === 'right' || dir === 'up-right' || dir === 'down-right',
+                up: dir.includes('up'),
+                down: dir.includes('down'),
+                left: dir.includes('left'),
+                right: dir.includes('right'),
             };
 
             for (const [key, isActive] of Object.entries(directions)) {
                 if (isActive && !activeDirections[key]) {
                     triggerKey(keyMap[key], 'keydown');
                     activeDirections[key] = true;
+                } else if (!isActive && activeDirections[key]) {
+                    triggerKey(keyMap[key], 'keyup');
+                    delete activeDirections[key];
                 }
             }
+
+            inactivityTimer = setTimeout(() => {
+                clearAllDirections(); // auto-release
+            }, INACTIVITY_TIMEOUT);
         });
 
         joystick.on('end', () => {
-            for (const key of Object.keys(activeDirections)) {
-                triggerKey(keyMap[key], 'keyup');
-            }
-            activeDirections = {};
+            clearAllDirections();
+            clearTimeout(inactivityTimer);
         });
     });
 </script>
