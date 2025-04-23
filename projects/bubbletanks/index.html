@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Bubble Tanks 2</title>
+    <link href="../../images/ico.ico" rel="shortcut icon" type="image/x-icon">
+    <script src="../../storage/js/cloak.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+        #joystick-zone {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<script src="/js/main.js"></script>
+
+<!-- Load Ruffle -->
+<script>
+    function loadLocalRuffle() {
+        var script = document.createElement('script');
+        script.src = '../../storage/ruffle/ruffle.js';
+        document.body.appendChild(script);
+    }
+
+    var cdnScript = document.createElement('script');
+    cdnScript.src = 'https://unpkg.com/@ruffle-rs/ruffle';
+    cdnScript.onerror = loadLocalRuffle;
+    document.body.appendChild(cdnScript);
+</script>
+
+<!-- Ruffle Player Container -->
+<div height="100%" id="ruffle" width="100%"></div>
+
+<!-- Joystick Container -->
+<div id="joystick-zone"></div>
+
+<!-- Load nipplejs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.9.0/nipplejs.min.js"></script>
+<script>
+    // Load game
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("load", () => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("ruffle");
+        player.id = "player";
+        player.style.width = "100%";
+        player.style.height = "100%";
+        container.appendChild(player);
+        player.load("bubble-tanks-2.swf");
+
+        // Setup joystick
+        const joystick = nipplejs.create({
+            zone: document.getElementById('joystick-zone'),
+            mode: 'static',
+            position: { left: '75px', bottom: '75px' },
+            color: 'white'
+        });
+
+        const keyMap = {
+            up: 'KeyW',
+            down: 'KeyS',
+            left: 'KeyA',
+            right: 'KeyD'
+        };
+
+        function triggerKey(code, type = 'keydown') {
+            const event = new KeyboardEvent(type, {
+                bubbles: true,
+                cancelable: true,
+                code: code,
+                key: code.replace('Key', ''),
+            });
+            document.dispatchEvent(event);
+        }
+
+        let activeDirections = {};
+
+        joystick.on('dir', (evt, data) => {
+            const dir = data.direction.angle;
+
+            const directions = {
+                up: dir === 'up' || dir === 'up-left' || dir === 'up-right',
+                down: dir === 'down' || dir === 'down-left' || dir === 'down-right',
+                left: dir === 'left' || dir === 'up-left' || dir === 'down-left',
+                right: dir === 'right' || dir === 'up-right' || dir === 'down-right',
+            };
+
+            for (const [key, isActive] of Object.entries(directions)) {
+                if (isActive && !activeDirections[key]) {
+                    triggerKey(keyMap[key], 'keydown');
+                    activeDirections[key] = true;
+                }
+            }
+        });
+
+        joystick.on('end', () => {
+            for (const key of Object.keys(activeDirections)) {
+                triggerKey(keyMap[key], 'keyup');
+            }
+            activeDirections = {};
+        });
+    });
+</script>
+</body>
+</html>
