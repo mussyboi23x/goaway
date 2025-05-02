@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9088643091921994"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>mussab</title>
+    <link rel="icon" type="image/x-icon" href="games-site-logo.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="games-site-logo.png" />
+    <meta property="og:description" content="We do got games on our phone." />
+    <meta name="description" content="We do got games on our phone." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var t=window,w="c2dd80854cb1ed363571c120878f6048",d=[["siteId",930-846*743+121-135+5814685],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],p=["d3d3LnhhZHNtYXJ0LmNvbS9jcFNKUy9ZeEgvY3JhdmVuLm1pbi5qcw==","ZDExZW5xMnJ5bXkweWwuY2xvdWRmcm9udC5uZXQvZVRlei5taW4uanM="],z=-1,y,x,u=function(){clearTimeout(x);z++;if(p[z]&&!(1769040383000<(new Date).getTime()&&1<z)){y=t.document.createElement("script");y.type="text/javascript";y.async=!0;var l=t.document.getElementsByTagName("script")[0];y.src="https://"+atob(p[z]);y.crossOrigin="anonymous";y.onerror=u;y.onload=function(){clearTimeout(x);t[w.slice(0,16)+w.slice(0,16)]||u()};x=setTimeout(u,5E3);l.parentNode.insertBefore(y,l)}};if(!t[w]){try{Object.freeze(t[w]=d)}catch(e){}u()}})();
+/*]]>/* */
+</script>
+</head>
+<body onload="startTime()">
+
+<header>
+    <div class="menubar">
+        <div class="topnav">
+            <a class="active" href="index.html">Games</a>
+            <a href="retro.html">Retro</a>
+            <a href="flash.html">Flash</a>
+            <div class="topnav-right">
+                <a id="txt"></a>
+                <a id="hide">Hide</a>>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="all-games">
+        <h1 class="text-center">All Games</h1>
+        <p class="text-center">cool gams</p>
+<script type="text/javascript">
+	atOptions = {
+		'key' : 'e43f9282a2929766f3f63645eb5af819',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+        <div class="sortbar">
+            <div class="topnav">
+                <a class="active">Sort by:</a>
+                <a href="#all">All</a>
+                <a href="#fnaf">FNAF</a>
+                <a href="#moto-x3m">Moto X3M</a>
+                <a href="#snail-bob">Snail Bob</a>
+                <a href="#vex">Vex</a>
+            </div>
+        </div>
+        <script src="JS/hide.js"></script>
+        <script src="JS/clock.js"></script>
+        <script src="JS/search.js"></script>
+
+        <div class="nav-container">
+            <div class="search-container">
+                <input class="search-box" id="search-box" type="search"  onkeyup="searching(this)" onfocus="fun(this)" placeholder="Search for Games">
+                <div class="search-results" id="search-results">
+                </div>
+            </div>
+        </div>
+        <div id="game-container" class="game-grid-container"></div>
+    </section>
+</main>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menubar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.topnav-right {
+    display: flex;
+    align-items: center;
+}
+
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+#all-games {
+    padding-top: 0;
+}
+
+.game-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.game-tile {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.game-tile-popular{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-icon {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.game-title {
+    margin-top: 10px;
+    font-size: 16px;
+}
+.nav-container{
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.search-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 16px;
+}
+
+.search-results {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    top: 40px;
+    left: 0;
+    z-index: 1;
+}
+
+.search-results a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    text-align: left;
+}
+
+.search-results a:hover {
+    background-color: #f0f0f0;
+}
+.sortbar {
+    background-color: #333;
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.sortbar a{
+     color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.sortbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.sortbar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+@media screen and (max-width: 600px) {
+    .topnav, .topnav-right {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .topnav a {
+        text-align: center;
+        width: 100%;
+    }
+    .search-box{
+        width: 100%;
+    }
+    .search-results{
+        width: 100%;
+    }
+}
+</style>
+    <script type="text/javascript">
+	atOptions = {
+		'key' : '979c92728591f7a0e4a6efe50d381842',
+		'format' : 'iframe',
+		'height' : 300,
+		'width' : 160,
+		'params' : {}
+	};
+</script>
+
+<script>
+let games = [
+        { name: "1v1.lol", link: "projects/1v1.lol/index.html", image: "projects/1v1.lol/splash.png" },
+        { name: "2048", link: "projects/2048/index.html", image: "projects/2048/thumb.png" },
+        { name: "9007199254740992", link: "projects/9007199254740992/index.html", image: "projects/9007199254740992/logo-4.png" },
+        { name: "Ages Of Conflict", link: "projects/ages-of-conflict/index.html", image: "projects/ages-of-conflict/splash.jpg" },
+        { name: "Among Us", link: "projects/among-us/index.html", image: "projects/among-us/unnamed.jpg" },
+        { name: "A Small World Cup", link: "projects/a-small-world-cup/index.html", image: "projects/a-small-world-cup/a-small-world-cup.png" },
+        { name: "Baldi's Basics", link: "projects/baldis-basics/index.html", image: "projects/baldis-basics/baldis-basics.png" },
+	{ name: "Bubble Tanks 2", link: "projects/bubbletanks/index.html", image: "projects/bubbletanks/IMG_3131.webp" },
+        { name: "Ball Sort Puzzle", link: "projects/ball-sort-puzzle/index.html", image: "projects/ball-sort-puzzle/thumb.png" },
+        { name: "Basket and Ball", link: "projects/basket-and-ball/index.html", image: "projects/basket-and-ball/thumb.jpg" },
+        { name: "Bitlife", link: "projects/bitlife/index.html", image: "projects/bitlife/thumb.png" },
+        { name: "Blackjack", link: "projects/blackjack/index.html", image: "projects/blackjack/thumb.png" },
+        { name: "Block the Pig", link: "projects/block-the-pig/index.html", image: "projects/block-the-pig/thumb.png" },
+        { name: "Buckshot Roulette", link: "projects/bsroulette/index.html", image: "projects/bsroulette/IMG_3051.webp" },
+        { name: "Cell Machine", link: "projects/cell-machine/index.html", image: "projects/cell-machine/img/te9nDu.png" },
+        { name: "Chrome Dino", link: "projects/chrome-dino/index.html", image: "projects/chrome-dino/icons/icon-256.png" },
+	{ name: "Choose Your weapon", link: "projects/choose-your-weapon/index.html", image: "projects/choose-your-weapon/IMG_3132.png" },
+        { name: "Circlo", link: "projects/circlo/index.html", image: "projects/circlo/img/download.png" },
+        { name: "Cookie Clicker", link: "projects/cookie-clicker/index.html", image: "projects/cookie-clicker/cookie1.jpeg" },
+        { name: "Core Ball", link: "projects/core-ball/index.html", image: "projects/core-ball/pr_source.png" },
+        { name: "Cut The Rope", link: "projects/ctr-time-travel/index.html", image: "projects/ctr-time-travel/thumb.png" },
+        { name: "Rocket League (IN PROGRESS)", link: "projects/rsd/index.html", image: "projects/rsd/splash.webp" },
+        { name: "Death Run 3D", link: "projects/death-run-3d/index.html", image: "projects/death-run-3d/img/death.png" },
+        { name: "Doodle Jump", link: "projects/doodle-jump/index.html", image: "projects/doodle-jump/doodle.png" },
+        { name: "Drift Boss", link: "projects/drift-boss/index.html", image: "projects/drift-boss/drift-boss.png" },
+        { name: "Drift Hunters", link: "projects/drift-hunters/index.html", image: "projects/drift-hunters/thumb.png" },
+        { name: "Duck Life 4", link: "projects/ducklife4/index.html", image: "projects/ducklife4/splash.jpg" },
+        { name: "Edge Surf", link: "projects/edge-surf/index.html", image: "projects/edge-surf/favicon.svg" },
+        { name: "Fruit Ninja", link: "projects/fruit-ninja/index.html", image: "projects/fruit-ninja/thumb.png" },
+	{ name: "Jetpack Joyride", link: "projects/jetpack/index.html", image: "projects/jetpack/IMG_3112.jpeg" },
+        { name: "Fleeing the Complex", link: "projects/stickmin/index.html", image: "projects/stickmin/IMG_3113.jpeg" },
+	{ name: "just fall", link: "projects/fellguys/index.html", image: "projects/fellguys/unnamed.png" },
+	{ name: "Raft Wars 2", link: "projects/raftwars/index.html", image: "projects/raftwars/IMG_3124.jpeg" },
+	{ name: "A Dance Of Fire And Ice", link: "projects/adofai/index.html", image: "projects/adofai/icon.png" },
+        { name: "Totally Accurate Battle Sim", link: "projects/tabs/index.html", image: "projects/tabs/unnamed.png" },
+        { name: "Geometry Dash", link: "projects/geodash/index.html", image: "projects/geodash/geoscratchicon.png" },
+        { name: "Geometry Dash", link: "projects/geodash-subzero/index.html", image: "projects/geodash-subzero/geodash-subzero.png" },
+        { name: "Google Feud", link: "projects/google-feud/index.html", image: "projects/google-feud/splash.png" },
+        { name: "Google Snake", link: "projects/google-snake/index.html", image: "projects/google-snake/google-snake.png" },
+        { name: "Hextris", link: "projects/hextris/index.html", image: "projects/hextris/images/hextris-logo.png" },
+        { name: "Idle Breakout", link: "projects/idle-breakout/frame.html", image: "projects/idle-breakout/thumb.png" },
+        { name: "Little Alchemy 2", link: "projects/little-alchemy/index.html", image: "projects/little-alchemy/unnamed.png" },
+	{ name: "Minecraft", link: "projects/eaglermob/index.html", image: "projects/eaglermob/IMG_3146.png" },
+        { name: "Madalin Stunt Cars 2", link: "projects/madalin-stunt-cars-2/index.html", image: "projects/madalin-stunt-cars-2/img/logo.jpg" },
+        { name: "Madalin Stunt Cars 3", link: "projects/madalin-stunt-cars-3/index.html", image: "projects/madalin-stunt-cars-3/img/index.jpg" },
+        { name: "Mario", link: "projects/mario/index.html", image: "projects/mario/Theme/Mario.jpg" },
+        { name: "Minecraft Classic", link: "projects/minecraft/index.html", image: "projects/minecraft/thumb.png" },
+        { name: "Minesweeper", link: "projects/minesweeper/index.html", image: "projects/minesweeper/img/minesweeper.png" },
+	{ name: "No Way Back", link: "projects/nowayback/index.html", image: "projects/nowayback/IMG_3145.png" },
+        { name: "Pac-Man", link: "projects/pacman/index.html", image: "projects/pacman/thumbnail.png" },
+        { name: "Paper.io 2", link: "projects/paperio2/index.html", image: "projects/paperio2/images/icon512.png" },
+        { name: "Papery Planes", link: "projects/papery-planes/index.html", image: "projects/papery-planes/splash.jpg" },
+        { name: "Poker", link: "projects/poker/poker.html", image: "projects/poker/static/images/logo.png" },
+        { name: "Project Sand", link: "projects/project-sand/index.html", image: "projects/project-sand/assets/thumb.png" },
+        { name: "Retro Bowl", link: "projects/retro-bowl/index.html", image: "projects/retro-bowl/img/icon.jpg" },
+        { name: "Retro Bowl College", link: "projects/retro-bowl-college/index.html", image: "projects/retro-bowl-college/unnamed.png" },
+	{ name: "Recoil", link: "projects/recoil/index.html", image: "projects/recoil/webapp/cover.jpg" },
+        { name: "Rocketpult", link: "projects/rocketpult/index.html", image: "projects/rocketpult/rocketpult.png" },
+        { name: "Rooftop Snipers", link: "projects/rooftop-snipers/index.html", image: "projects/rooftop-snipers/thumb.png" },
+        { name: "Sand Tetris", link: "projects/sandtrix/index.html", image: "projects/sandtrix/thumb.png" },
+        { name: "Save the Doge", link: "projects/save-the-doge/index.html", image: "projects/save-the-doge/thumb.png" },
+        { name: "Slope", link: "projects/slope/index.html", image: "projects/slope/slope4.jpeg" },
+        { name: "Smash Karts", link: "projects/smash-karts/index.html", image: "projects/smash-karts/smash-karts.png" },
+        { name: "Solitare", link: "projects/solitaire/index.html", image: "projects/solitaire/screen-shot.png" },
+        { name: "Solitare (MS)", link: "projects/ms-solitaire/index.html", image: "projects/ms-solitaire/unnamed.png" },
+        { name: "Stickman Hook", link: "projects/stickman-hook/index.html", image: "projects/stickman-hook/unnamed.jpg" },
+        { name: "Subway Surfers", link: "subway-surfers.html", image: "projects/subway-surfers-san-francisco/img/splash.png" },
+        { name: "Temple Run 2", link: "projects/temple-run-2/index.html", image: "projects/temple-run-2/img/og-icon.png" },
+        { name: "Tomb of the Mask", link: "projects/totm/index.html", image: "projects/totm/thumb.png" },
+        { name: "Tunnel Rush", link: "projects/tunnel-rush/index.html", image: "projects/tunnel-rush/img/tunnel.jpg" },
+        { name: "We Become what we Behold", link: "projects/wbwwb/index.html", image: "projects/wbwwb/thumb.png" },
+        { name: "FNAF 1", link: "projects/fnaf-1/index.html", image: "projects/fnaf-1/favicon.png" },
+        { name: "FNAF 2", link: "projects/fnaf-2/index.html", image: "projects/fnaf-2/fnaf-2.jpg" },
+        { name: "FNAF 3", link: "projects/fnaf-3/index.html", image: "projects/fnaf-3/fnaf-3.png" },
+        { name: "FNAF 4", link: "projects/fnaf-4/index.html", image: "projects/fnaf-4/thumb.png" },
+        { name: "Sister Location", link: "projects/fnaf-5/index.html", image: "projects/fnaf-5/favicon.jpg" },
+        { name: "FNAF UCN", link: "projects/fnaf-ucn/index.html", image: "projects/fnaf-ucn/thumb.png" },
+        { name: "Moto X3M", link: "projects/moto-x3m/index.html", image: "projects/moto-x3m/moto-x3m.png" },
+        { name: "Moto X3M 2", link: "projects/moto-x3m-2/index.html", image: "projects/moto-x3m-2/moto-x3m-2.png" },
+        { name: "Moto X3M 3", link: "projects/moto-x3m-pool-party/index.html", image: "projects/moto-x3m-pool-party/moto-x3m-pool-party.png" },
+        { name: "Moto X3M 4", link: "projects/moto-x3m-spooky-land/index.html", image: "projects/moto-x3m-spooky-land/moto-x3m-spooky-land.png" },
+        { name: "Moto X3M 5", link: "projects/moto-x3m-winter/index.html", image: "projects/moto-x3m-winter/moto-x3m-winter.jpg" },
+        { name: "Snail Bob 1", link: "projects/snail-bob/index.html", image: "projects/snail-bob/snail-bob.png" },
+        { name: "Snail Bob 2", link: "projects/snail-bob-2/index.html", image: "projects/snail-bob-2/snail-bob-2.png" },
+        { name: "Snail Bob 3", link: "projects/snail-bob-3/index.html", image: "projects/snail-bob-3/snail-bob-3.png" },
+        { name: "Snail Bob 4", link: "projects/snail-bob-4/index.html", image: "projects/snail-bob-4/snail-bob-4.png" },
+        { name: "Snail Bob 5", link: "projects/snail-bob-5/index.html", image: "projects/snail-bob-5/snail-bob-5.jpg" },
+        { name: "Snail Bob 6", link: "projects/snail-bob-6/index.html", image: "projects/snail-bob-6/snail-bob-6.png" },
+        { name: "Snail Bob 7", link: "projects/snail-bob-7/index.html", image: "projects/snail-bob-7/snail-bob-7.jpg" },
+        { name: "Snail Bob 8", link: "projects/snail-bob-8/index.html", image: "projects/snail-bob-8/snail-bob-8.jpg" },
+        { name: "Vex 3", link: "projects/vex3/index.html", image: "projects/vex3/vex3.png" },
+        { name: "Vex 4", link: "projects/vex4/index.html", image: "projects/vex4/vex4.png" },
+        { name: "Vex 5", link: "projects/vex5/index.html", image: "projects/vex5/vex.jpg" },
+        { name: "Vex 6", link: "projects/vex6/index.html", image: "projects/vex6/assets/icon.png" },
+        { name: "we become what we behold", link: "projects/wbwwb/index.html", image: "projects/wbwwb/thumb.png" },
+        { name: "minecraft [v1.5.2]", link: "https://mussabthgoat.netlify.app/games/mc/index.html", image: "../images/thumbnails/mc.jpg" },
+        { name: "cookie clicker", link: "https://mussabthgoat.netlify.app/games/cookieclicker/index.html", image: "../images/thumbnails/cookieclick.jpg" },
+        { name: "temple run 2", link: "https://mussabthgoat.netlify.app/games/templerun2/index.html", image: "../images/thumbnails/templerun2.jpg" },
+        { name: "duck life 4", link: "https://mussabthgoat.netlify.app/games/ducklife4/index.html", image: "../images/thumbnails/ducklife4.jpg" },
+  { name: "minecraft [v1.5.2]", link: "https://mussabthgoat.netlify.app/games/mc/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mc.jpg" },
+  { name: "cookie clicker", link: "https://mussabthgoat.netlify.app/games/cookieclicker/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cookieclick.jpg" },
+  { name: "temple run 2", link: "https://mussabthgoat.netlify.app/games/templerun2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/templerun2.jpg" },
+  { name: "duck life 4", link: "https://mussabthgoat.netlify.app/games/ducklife4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ducklife4.jpg" },
+  { name: "chrome dino game", link: "https://mussabthgoat.netlify.app/games/dinogame/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chromedino.jpg" },
+  { name: "jetpack joyride", link: "https://mussabthgoat.netlify.app/games/jetpackjoyride/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/jetpackjoyride.jpg" },
+  { name: "retro bowl", link: "https://mussabthgoat.netlify.app/games/retrobowl/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/retrobowl.jpg" },
+  { name: "fruit ninja", link: "https://mussabthgoat.netlify.app/games/fruitninja/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fruitninja.jpg" },
+  { name: "doodle jump", link: "https://mussabthgoat.netlify.app/games/doodlejump/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/doodlejump.jpg" },
+  { name: "2048", link: "https://mussabthgoat.netlify.app/games/2048/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/2048.jpg" },
+  { name: "tetris", link: "https://mussabthgoat.netlify.app/games/tetris/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/tetris.jpg" },
+  { name: "fancy pants adventure", link: "https://mussabthgoat.netlify.app/games/fancypantsadventure/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fancypantsadventure.jpg" },
+  { name: "happy wheels", link: "https://mussabthgoat.netlify.app/games/happywheels/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/happywheels.jpg" },
+  { name: "papa's hotdoggeria", link: "https://mussabthgoat.netlify.app/games/papashotdoggeria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papashotdoggeria.jpg" },
+  { name: "paperio2", link: "https://mussabthgoat.netlify.app/games/paperio2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/paperio2.jpg" },
+  { name: "super hot", link: "https://mussabthgoat.netlify.app/games/superhot/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/superhot.jpg" },
+  { name: "the binding of isaac", link: "https://mussabthgoat.netlify.app/games/thebindingofisaac/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/thebindingofisaac.jpg" },
+  { name: "townscaper", link: "https://mussabthgoat.netlify.app/games/townscaper/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/townscaper.jpg" },
+  { name: "tunnel rush", link: "https://mussabthgoat.netlify.app/games/tunnelrush/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/tunnelrush.jpg" },
+  { name: "theme hotel", link: "https://mussabthgoat.netlify.app/games/themehotel/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/themehotel.jpg" },
+  { name: "escaping the prison", link: "https://mussabthgoat.netlify.app/games/escapingtheprison/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/escapingtheprison.jpg" },
+  { name: "stealing the diamond", link: "https://mussabthgoat.netlify.app/games/stealingthediamond/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stealingthediamond.jpg" },
+  { name: "infiltrating the airship", link: "https://mussabthgoat.netlify.app/games/infiltratingtheairship/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/infiltratingtheairship.jpg" },
+  { name: "fleeing the complex", link: "https://mussabthgoat.netlify.app/games/fleeingthecomplex/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fleeingthecomplex.jpg" },
+  { name: "the impossible quiz", link: "https://mussabthgoat.netlify.app/games/theimpossiblequiz/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/theimpossiblequiz.jpg" },
+  { name: "solitaire", link: "https://mussabthgoat.netlify.app/games/solitaire/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/solitaire.jpg" },
+  { name: "drift hunters", link: "https://mussabthgoat.netlify.app/games/drifthunters/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/drifthunters.jpg" },
+  { name: "vex 6", link: "https://mussabthgoat.netlify.app/games/vex6/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vex6.jpg" },
+  { name: "among us fangame", link: "https://mussabthgoat.netlify.app/games/amongus/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/amongus.jpg" },
+  { name: "edge surf", link: "https://mussabthgoat.netlify.app/games/surf/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/surf.jpg" },
+  { name: "motox3m", link: "https://mussabthgoat.netlify.app/games/motox3m/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/motox3m.jpeg" },
+  { name: "fnaf 1", link: "https://mussabthgoat.netlify.app/games/fnaf/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fnaf.jpg" },
+  { name: "fnaf 2", link: "https://mussabthgoat.netlify.app/games/fnaf-2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fnaf2.jpg" },
+  { name: "fnaf 3", link: "https://mussabthgoat.netlify.app/games/fnaf-3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fnaf3.jpg" },
+  { name: "fnaf 4", link: "https://mussabthgoat.netlify.app/games/fnaf-4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fnaf4.jpg" },
+  { name: "riddle school", link: "https://mussabthgoat.netlify.app/games/riddleschool/riddleschool1/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/riddleschool.jpg" },
+  { name: "riddle school 2", link: "https://mussabthgoat.netlify.app/games/riddleschool/riddleschool2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/riddleschool2.jpg" },
+  { name: "riddle school 3", link: "https://mussabthgoat.netlify.app/games/riddleschool/riddleschool3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/riddleschool3.jpg" },
+  { name: "riddle school 4", link: "https://mussabthgoat.netlify.app/games/riddleschool/riddleschool4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/riddleschool4.jpg" },
+  { name: "riddle school 5", link: "https://mussabthgoat.netlify.app/games/riddleschool/riddleschool5/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/riddleschool5.jpg" },
+  { name: "riddle transfer", link: "https://mussabthgoat.netlify.app/games/riddleschool/riddletransfer/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/riddletransfer.jpg" },
+  { name: "riddle transfer 2", link: "https://mussabthgoat.netlify.app/games/riddleschool/riddletransfer2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/riddletransfer2.jpg" },
+  { name: "drift boss", link: "https://mussabthgoat.netlify.app/games/driftboss/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/driftboss.jpg" },
+  { name: "friday night funkin", link: "https://mussabthgoat.netlify.app/games/fnf/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fnf.jpg" },
+  { name: "pacman", link: "https://mussabthgoat.netlify.app/games/pacman/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pacman.jpg" },
+  { name: "papa's pancakeria", link: "https://mussabthgoat.netlify.app/games/papaspancakeria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papaspancakeria.jpg" },
+  { name: "rooftop snipers", link: "https://mussabthgoat.netlify.app/games/rooftop/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/rooftopsnipers.jpg" },
+  { name: "baldi's basics", link: "https://mussabthgoat.netlify.app/games/baldisbasics/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/baldisbasics.jpg" },
+  { name: "bob the robber 2", link: "https://mussabthgoat.netlify.app/games/bobtherobber2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bobtherobber2.jpg" },
+  { name: "minesweeper", link: "https://mussabthgoat.netlify.app/games/minesweeper/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/minesweeper.jpg" },
+  { name: "pokemon emerald", link: "https://mussabthgoat.netlify.app/games/pokemonemerald/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonemerald.jpg" },
+  { name: "pokemon fire red", link: "https://mussabthgoat.netlify.app/games/pokemonfirered/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonfirered.jpg" },
+  { name: "super mario bros", link: "https://mussabthgoat.netlify.app/games/supermariobros/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermariobros.jpg" },
+  { name: "super mario kart", link: "https://mussabthgoat.netlify.app/games/supermariokart/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermariokart.jpg" },
+  { name: "super mario world", link: "https://mussabthgoat.netlify.app/games/supermarioworld/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermarioworld.jpg" },
+  { name: "there is no game", link: "https://mussabthgoat.netlify.app/games/thereisnogame/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/thereisnogame.jpg" },
+  { name: "world's hardest game", link: "https://mussabthgoat.netlify.app/games/worldshardestgame/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/worldshardestgame.jpg" },
+  { name: "castlevania", link: "https://mussabthgoat.netlify.app/games/castlevania/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/castlevania.jpg" },
+  { name: "donkey kong", link: "https://mussabthgoat.netlify.app/games/donkeykong/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/donkeykong.jpg" },
+  { name: "dr mario", link: "https://mussabthgoat.netlify.app/games/drmario/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/drmario.jpg" },
+  { name: "metroid", link: "https://mussabthgoat.netlify.app/games/metroid/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/metroid.jpg" },
+  { name: "super mario bros 2", link: "https://mussabthgoat.netlify.app/games/supermariobros2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermariobros2.jpg" },
+  { name: "super mario bros 3", link: "https://mussabthgoat.netlify.app/games/supermariobros3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermariobros3.jpg" },
+  { name: "the legend of zelda", link: "https://mussabthgoat.netlify.app/games/thelegendofzelda/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/thelegendofzelda.jpg" },
+  { name: "warioware", link: "https://mussabthgoat.netlify.app/games/warioware/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/warioware.jpg" },
+  { name: "yoshi's island", link: "https://mussabthgoat.netlify.app/games/yoshisisland/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/yoshisisland.jpg" },
+  { name: "donkey kong land", link: "https://mussabthgoat.netlify.app/games/donkeykongland/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/donkeykongland.jpg" },
+  { name: "kirby's dream land", link: "https://mussabthgoat.netlify.app/games/kirbysdreamland/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/kirbysdreamland.jpg" },
+  { name: "super mario land", link: "https://mussabthgoat.netlify.app/games/supermarioland/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermarioland.jpg" },
+  { name: "doge miner", link: "https://mussabthgoat.netlify.app/games/dogeminer/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/dogeminer.jpg" },
+  { name: "tanuki sunset", link: "https://mussabthgoat.netlify.app/games/tanukisunset/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/tanukisunset.jpg" },
+  { name: "aquapark slides", link: "https://mussabthgoat.netlify.app/games/aquaparkslides/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/aquaparkslides.jpg" },
+  { name: "color switch", link: "https://mussabthgoat.netlify.app/games/colorswitch/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/colorswitch.jpg" },
+  { name: "papa's freezeria", link: "https://mussabthgoat.netlify.app/games/papasfreezeria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papasfreezeria.jpg" },
+  { name: "btd", link: "https://mussabthgoat.netlify.app/games/btd/btd/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/btd.jpg" },
+  { name: "btd 2", link: "https://mussabthgoat.netlify.app/games/btd/btd2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/btd2.jpg" },
+  { name: "btd 3", link: "https://mussabthgoat.netlify.app/games/btd/btd3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/btd3.jpg" },
+  { name: "btd 4", link: "https://mussabthgoat.netlify.app/games/btd/btd4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/btd4.jpg" },
+  { name: "bomberman", link: "https://mussabthgoat.netlify.app/games/bomberman/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bomberman.jpg" },
+  { name: "fire emblem", link: "https://mussabthgoat.netlify.app/games/fireemblem/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fireemblem.jpg" },
+  { name: "ice climber", link: "https://mussabthgoat.netlify.app/games/iceclimber/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/iceclimber.jpg" },
+  { name: "mario kart super circuit", link: "https://mussabthgoat.netlify.app/games/mariokartsupercircuit/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariokartsupercircuit.jpg" },
+  { name: "pokemon leaf green", link: "https://mussabthgoat.netlify.app/games/pokemonleafgreen/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonleafgreen.jpg" },
+  { name: "pokemon ruby", link: "https://mussabthgoat.netlify.app/games/pokemonruby/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonruby.jpg" },
+  { name: "pokemon sapphire", link: "https://mussabthgoat.netlify.app/games/pokemonsapphire/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonsapphire.jpg" },
+  { name: "superstar saga", link: "https://mussabthgoat.netlify.app/games/superstarsaga/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/superstarsaga.jpg" },
+  { name: "adofai", link: "https://mussabthgoat.netlify.app/games/adofai/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/adofai.jpg" },
+  { name: "super smash flash", link: "https://mussabthgoat.netlify.app/games/supersmashflash/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supersmashflash.jpg" },
+  { name: "super meat boy", link: "https://mussabthgoat.netlify.app/games/supermeatboy/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermeatboy.jpg" },
+  { name: "stickman hook", link: "https://mussabthgoat.netlify.app/games/stickmanhook/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stickmanhook.jpg" },
+  { name: "defend the tank", link: "https://mussabthgoat.netlify.app/games/defendthetank/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/defendthetank.jpg" },
+  { name: "sort the court", link: "https://mussabthgoat.netlify.app/games/sortthecourt/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sortthecourt.jpg" },
+  { name: "this is the only level", link: "https://mussabthgoat.netlify.app/games/thisistheonlylevel/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/thisistheonlylevel.jpg" },
+  { name: "run", link: "https://mussabthgoat.netlify.app/games/run/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/run.jpg" },
+  { name: "run 2", link: "https://mussabthgoat.netlify.app/games/run2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/run2.jpg" },
+  { name: "battleships", link: "https://mussabthgoat.netlify.app/games/battleships/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/battleships.jpg" },
+  { name: "breaking the bank", link: "https://mussabthgoat.netlify.app/games/breakingthebank/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/breakingthebank.jpg" },
+  { name: "duck life", link: "https://mussabthgoat.netlify.app/games/ducklife/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ducklife.jpg" },
+  { name: "duck life 2", link: "https://mussabthgoat.netlify.app/games/ducklife2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ducklife2.jpg" },
+  { name: "duck life 3", link: "https://mussabthgoat.netlify.app/games/ducklife3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ducklife3.jpg" },
+  { name: "line rider", link: "https://mussabthgoat.netlify.app/games/linerider/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/linerider.jpg" },
+  { name: "mario combat", link: "https://mussabthgoat.netlify.app/games/mariocombat/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariocombat.jpg" },
+  { name: "raft wars 2", link: "https://mussabthgoat.netlify.app/games/raftwars2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/raftwars2.jpg" },
+  { name: "space invaders", link: "https://mussabthgoat.netlify.app/games/spaceinvaders/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/spaceinvaders.jpg" },
+  { name: "animal crossing", link: "https://mussabthgoat.netlify.app/games/animalcrossingwildworld/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/animalcrossingwildworld.jpg" },
+  { name: "mario kart ds", link: "https://mussabthgoat.netlify.app/games/mariokartds/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariokartds.jpg" },
+  { name: "new super mario bros", link: "https://mussabthgoat.netlify.app/games/newsupermariobros/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/newsupermariobros.jpg" },
+  { name: "nintendogs", link: "https://mussabthgoat.netlify.app/games/nintendogs/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/nintendogs.jpg" },
+  { name: "super mario 64 ds", link: "https://mussabthgoat.netlify.app/games/sm64ds/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sm64ds.jpg" },
+  { name: "gun mayhem", link: "https://mussabthgoat.netlify.app/games/gunmayhem/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/gunmayhem.jpg" },
+  { name: "learn to fly", link: "https://mussabthgoat.netlify.app/games/learntofly/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/learntofly.jpg" },
+  { name: "rooftop snipers 2", link: "https://mussabthgoat.netlify.app/games/rooftop2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/rooftopsnipers2.jpg" },
+  { name: "fireboy and watergirl", link: "https://mussabthgoat.netlify.app/games/fireboywatergirl/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fireboyandwatergirl.jpg" },
+  { name: "chibi knight", link: "https://mussabthgoat.netlify.app/games/chibiknight/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chibiknight.jpg" },
+  { name: "cluster rush", link: "https://mussabthgoat.netlify.app/games/clusterrush/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/clusterrush.jpg" },
+  { name: "doodle defender", link: "https://mussabthgoat.netlify.app/games/doodledefender/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/doodledefender.jpg" },
+  { name: "learn to fly 2", link: "https://mussabthgoat.netlify.app/games/learntofly2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/learntofly2.jpg" },
+  { name: "papa's scooperia", link: "https://mussabthgoat.netlify.app/games/papasscooperia/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papasscooperia.jpg" },
+  { name: "papa's sushiria", link: "https://mussabthgoat.netlify.app/games/papassushiria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papaswingeria.jpg" },
+  { name: "papa's wingeria", link: "https://mussabthgoat.netlify.app/games/papaswingeria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papassushiria.jpg" },
+  { name: "raft wars", link: "https://mussabthgoat.netlify.app/games/raftwars/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/raftwars.jpg" },
+  { name: "unfair mario", link: "https://mussabthgoat.netlify.app/games/unfairmario/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/unfairmario.jpg" },
+  { name: "boxing physics 2", link: "https://mussabthgoat.netlify.app/games/boxingphysics2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/boxingphysics2.jpg" },
+  { name: "ace attorney", link: "https://mussabthgoat.netlify.app/games/aceattorney/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/aceattorney.jpg" },
+  { name: "metal gear solid", link: "https://mussabthgoat.netlify.app/games/metalgearsolid/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/metalgearsolid.jpg" },
+  { name: "mother 3", link: "https://mussabthgoat.netlify.app/games/mother3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mother3.jpg" },
+  { name: "pokemon diamond", link: "https://mussabthgoat.netlify.app/games/pokemondiamond/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemondiamond.jpg" },
+  { name: "pokemon platinum", link: "https://mussabthgoat.netlify.app/games/pokemonplatinum/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonplatinum.jpg" },
+  { name: "pokemon soulsilver", link: "https://mussabthgoat.netlify.app/games/pokemonsoulsilver/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonsoulsilver.jpg" },
+  { name: "advance wars", link: "https://mussabthgoat.netlify.app/games/advancewars/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/advancewars.jpg" },
+  { name: "banjo pilot", link: "https://mussabthgoat.netlify.app/games/banjopilot/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/banjopilot.jpg" },
+  { name: "super monkey ball jr", link: "https://mussabthgoat.netlify.app/games/supermonkeyballjr/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermonkeyballjr.jpg" },
+  { name: "the impossible quiz 2", link: "https://mussabthgoat.netlify.app/games/theimpossiblequiz2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/theimpossiblequiz2.jpg" },
+  { name: "papa's donuteria", link: "https://mussabthgoat.netlify.app/games/papasdonuteria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papasdonuteria.jpg" },
+  { name: "fancy pants adventure 2", link: "https://mussabthgoat.netlify.app/games/fancypantsadventure2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fancypantsadventure2.jpg" },
+  { name: "tiny fishing", link: "https://mussabthgoat.netlify.app/games/tinyfishing/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/tinyfishing.jpg" },
+  { name: "big red button", link: "https://mussabthgoat.netlify.app/games/bigredbutton/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bigredbutton.jpg" },
+  { name: "achievement unlocked", link: "https://mussabthgoat.netlify.app/games/achievementunlocked/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/achievementunlocked.jpg" },
+  { name: "kirby mass attack", link: "https://mussabthgoat.netlify.app/games/kirbymassattack/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/kirbymassattack.jpg" },
+  { name: "sonic advance", link: "https://mussabthgoat.netlify.app/games/sonicadvance/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sonicadvance.jpg" },
+  { name: "worms world party", link: "https://mussabthgoat.netlify.app/games/wormsworldparty/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/wormsworldparty.jpg" },
+  { name: "bad ice cream", link: "https://mussabthgoat.netlify.app/games/badicecream/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/badicecream.jpg" },
+  { name: "bad ice cream 2", link: "https://mussabthgoat.netlify.app/games/badicecream2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/badicecream2.jpg" },
+  { name: "bad ice cream 3", link: "https://mussabthgoat.netlify.app/games/badicecream3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/badicecream3.jpg" },
+  { name: "adventure captialist", link: "https://mussabthgoat.netlify.app/games/adventurecapitalist/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/adventurecaptialist.jpg" },
+  { name: "monkey mart", link: "https://mussabthgoat.netlify.app/games/monkeymart/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/monkeymart.jpg" },
+  { name: "doom 64", link: "https://mussabthgoat.netlify.app/games/doom64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/doom64.jpg" },
+  { name: "banjo kazooie", link: "https://mussabthgoat.netlify.app/games/banjokazooie/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/banjokazooie.jpg" },
+  { name: "donkey kong 64", link: "https://mussabthgoat.netlify.app/games/donkeykong64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/donkeykong64.jpg" },
+  { name: "f-zero x", link: "https://mussabthgoat.netlify.app/games/fzerox/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fzerox.jpg" },
+  { name: "kirby 64", link: "https://mussabthgoat.netlify.app/games/kirby64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/kirby64.jpg" },
+  { name: "mario kart 64", link: "https://mussabthgoat.netlify.app/games/mariokart64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariokart64.jpg" },
+  { name: "mario party", link: "https://mussabthgoat.netlify.app/games/marioparty/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/marioparty.jpg" },
+  { name: "mario party 2", link: "https://mussabthgoat.netlify.app/games/marioparty2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/marioparty2.jpg" },
+  { name: "ocarina of time", link: "https://mussabthgoat.netlify.app/games/ocarinaoftime/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ocarinaoftime.jpg" },
+  { name: "star fox 64", link: "https://mussabthgoat.netlify.app/games/starfox64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/starfox64.jpg" },
+  { name: "super smash bros", link: "https://mussabthgoat.netlify.app/games/supersmashbros/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supersmashbros.jpg" },
+  { name: "street fighter 2", link: "https://mussabthgoat.netlify.app/games/streetfighter2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/streetfighter2.jpg" },
+  { name: "getaway shootout", link: "https://mussabthgoat.netlify.app/games/getawayshootout/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/getawayshootout.jpg" },
+  { name: "rabbit samurai", link: "https://mussabthgoat.netlify.app/games/rabbitsamurai/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/rabbitsamurai.jpg" },
+  { name: "mario party ds", link: "https://mussabthgoat.netlify.app/games/mariopartyds/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariopartyds.jpg" },
+  { name: "professor layton", link: "https://mussabthgoat.netlify.app/games/professorlayton/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/professorlayton.jpg" },
+  { name: "scribblenauts", link: "https://mussabthgoat.netlify.app/games/scribblenauts/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/scribblenauts.jpg" },
+  { name: "advance wars 2", link: "https://mussabthgoat.netlify.app/games/advancewars2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/advancewars2.jpg" },
+  { name: "harvest moon", link: "https://mussabthgoat.netlify.app/games/harvestmoon/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/harvestmoon.jpg" },
+  { name: "mario tennis", link: "https://mussabthgoat.netlify.app/games/mariotennis/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariotennis.jpg" },
+  { name: "mega man zero", link: "https://mussabthgoat.netlify.app/games/megamanzero/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/megamanzero.jpg" },
+  { name: "mystery dungeon", link: "https://mussabthgoat.netlify.app/games/pokemonmysterydungeon/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonmysterydungeon.jpg" },
+  { name: "pokemon unbound", link: "https://mussabthgoat.netlify.app/games/pokemonunbound/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonunbound.jpg" },
+  { name: "papa's cheeseria", link: "https://mussabthgoat.netlify.app/games/papascheeseria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papascheeseria.jpg" },
+  { name: "papa's cupcakeria", link: "https://mussabthgoat.netlify.app/games/papascupcakeria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papascupcakeria.jpg" },
+  { name: "papa's bakeria", link: "https://mussabthgoat.netlify.app/games/papasbakeria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papasbakeria.jpg" },
+  { name: "papa's pastaria", link: "https://mussabthgoat.netlify.app/games/papaspastaria/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papaspastaria.jpg" },
+  { name: "gun mayhem 2", link: "https://mussabthgoat.netlify.app/games/gunmayhem2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/gunmayhem2.jpg" },
+  { name: "gun mayhem redux", link: "https://mussabthgoat.netlify.app/games/gunmayhemredux/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/gunmayhemredux.jpg" },
+  { name: "achievement unlocked 2", link: "https://mussabthgoat.netlify.app/games/achievementunlocked2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/achievementunlocked2.jpg" },
+  { name: "achievement unlocked 3", link: "https://mussabthgoat.netlify.app/games/achievementunlocked3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/achievementunlocked3.jpg" },
+  { name: "factory balls", link: "https://mussabthgoat.netlify.app/games/factoryballs/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/factoryballs.jpg" },
+  { name: "skywire", link: "https://mussabthgoat.netlify.app/games/skywire/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/skywire.jpg" },
+  { name: "super mario flash", link: "https://mussabthgoat.netlify.app/games/supermarioflash/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermarioflash.jpg" },
+  { name: "golden sun", link: "https://mussabthgoat.netlify.app/games/goldensun/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/goldensun.jpg" },
+  { name: "metroid fusion", link: "https://mussabthgoat.netlify.app/games/metroidfusion/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/metroidfusion.jpg" },
+  { name: "dbz: supersonic warriors", link: "https://mussabthgoat.netlify.app/games/dbzsupersonicwarriors/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/goldensun.jpg" },
+  { name: "wario land 4", link: "https://mussabthgoat.netlify.app/games/warioland4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/warioland4.jpg" },
+  { name: "duck life 5", link: "https://mussabthgoat.netlify.app/games/ducklife5/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ducklife5.jpg" },
+  { name: "learn to fly 3", link: "https://mussabthgoat.netlify.app/games/learntofly3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/learntofly3.jpg" },
+  { name: "bloxors", link: "https://mussabthgoat.netlify.app/games/bloxors/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bloxors.jpg" },
+  { name: "electric man 2", link: "https://mussabthgoat.netlify.app/games/electricman2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/electricman2.jpg" },
+  { name: "portal", link: "https://mussabthgoat.netlify.app/games/portal/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/portal.jpg" },
+  { name: "portal 2", link: "https://mussabthgoat.netlify.app/games/portal2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/portal2.jpg" },
+  { name: "skywire 2", link: "https://mussabthgoat.netlify.app/games/skywire2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/skywire2.jpg" },
+  { name: "duck life 6", link: "https://mussabthgoat.netlify.app/games/ducklife6/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ducklife6.jpg" },
+  { name: "boxing random", link: "https://mussabthgoat.netlify.app/games/boxingrandom/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/boxingrandom.jpg" },
+  { name: "cell machine", link: "https://mussabthgoat.netlify.app/games/cellmachine/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cellmachine.jpg" },
+  { name: "stickman boost", link: "https://mussabthgoat.netlify.app/games/stickmanboost/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stickmanboost.jpg" },
+  { name: "vex 3", link: "https://mussabthgoat.netlify.app/games/vex3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vex3.jpg" },
+  { name: "vex 4", link: "https://mussabthgoat.netlify.app/games/vex4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vex4.jpg" },
+  { name: "skibidi toilet 1v100", link: "https://mussabthgoat.netlify.app/games/skibidi1v100/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/skibiditoilet1v100.jpg" },
+  { name: "golden eye 007", link: "https://mussabthgoat.netlify.app/games/goldeneye007/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/goldeneye007.jpg" },
+  { name: "majora's mask", link: "https://mussabthgoat.netlify.app/games/majorasmask/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/majorasmask.jpg" },
+  { name: "paper mario", link: "https://mussabthgoat.netlify.app/games/papermario/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papermario.jpg" },
+  { name: "mario golf", link: "https://mussabthgoat.netlify.app/games/mariogolf/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariogolf.jpg" },
+  { name: "pokemon stadium", link: "https://mussabthgoat.netlify.app/games/pokemonstadium/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonstadium.jpg" },
+  { name: "excitebike 64", link: "https://mussabthgoat.netlify.app/games/excitebike64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/excitebike64.jpg" },
+  { name: "pokemon snap", link: "https://mussabthgoat.netlify.app/games/pokemonsnap/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonsnap.jpg" },
+  { name: "mario party 3", link: "https://mussabthgoat.netlify.app/games/marioparty3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/marioparty3.jpg" },
+  { name: "sonic advance 2", link: "https://mussabthgoat.netlify.app/games/sonicadvance2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sonicadvance2.jpg" },
+  { name: "bowsers inside story", link: "https://mussabthgoat.netlify.app/games/bowsersinsidestory/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bowsersinsidestory.jpg" },
+  { name: "spirit tracks", link: "https://mussabthgoat.netlify.app/games/spirittracks/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/spirittracks.jpg" },
+  { name: "the sims 2", link: "https://mussabthgoat.netlify.app/games/thesims2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/thesims2.jpg" },
+  { name: "tetris ds", link: "https://mussabthgoat.netlify.app/games/tetrisds/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/tetrisds.jpg" },
+  { name: "sonic rush", link: "https://mussabthgoat.netlify.app/games/sonicrush/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sonicrush.jpg" },
+  { name: "the sims 3", link: "https://mussabthgoat.netlify.app/games/thesims3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/thesims3.jpg" },
+  { name: "super princess peach", link: "https://mussabthgoat.netlify.app/games/superprincesspeach/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/superprincesspeach.jpg" },
+  { name: "lego batman", link: "https://mussabthgoat.netlify.app/games/legobatman/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/legobatman.jpg" },
+  { name: "doom 2", link: "https://mussabthgoat.netlify.app/games/doom2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/doomii.jpg" },
+  { name: "duke nukem advance", link: "https://mussabthgoat.netlify.app/games/dukenukemadvance/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/dukenukemadvance.jpg" },
+  { name: "mario party advance", link: "https://mussabthgoat.netlify.app/games/mariopartyadvance/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariopartyadvance.jpg" },
+  { name: "mario pinball land", link: "https://mussabthgoat.netlify.app/games/mariopinballland/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariopinballland.jpg" },
+  { name: "pacman world", link: "https://mussabthgoat.netlify.app/games/pacmanworld/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pacmanworld.jpg" },
+  { name: "rayman 3", link: "https://mussabthgoat.netlify.app/games/rayman3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/rayman3.jpg" },
+  { name: "shrek 2", link: "https://mussabthgoat.netlify.app/games/shrek2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shrek2.jpg" },
+  { name: "simcity 2000", link: "https://mussabthgoat.netlify.app/games/simcity/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/simcity2000.jpg" },
+  { name: "simpsons road rage", link: "https://mussabthgoat.netlify.app/games/simpsonsroadrage/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/simpsonsroadrage.jpg" },
+  { name: "diddy kong racing", link: "https://mussabthgoat.netlify.app/games/diddykongracing/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/diddykongracing.jpg" },
+  { name: "wave race 64", link: "https://mussabthgoat.netlify.app/games/waverace64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/waveracing.jpg" },
+  { name: "quest 64", link: "https://mussabthgoat.netlify.app/games/quest64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/quest64.jpg" },
+  { name: "gex 64", link: "https://mussabthgoat.netlify.app/games/gex64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/gex64.jpg" },
+  { name: "duke nukem 64", link: "https://mussabthgoat.netlify.app/games/dukenukem64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/dukenukem64.jpg" },
+  { name: "mortal kombat 4", link: "https://mussabthgoat.netlify.app/games/mortalkombat4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mortalkombat4.jpg" },
+  { name: "bad piggies", link: "https://mussabthgoat.netlify.app/games/badpiggies/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/badpiggies.jpg" },
+  { name: "super mario flash 2", link: "https://mussabthgoat.netlify.app/games/supermarioflash2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermarioflash2.jpg" },
+  { name: "swords and sandals", link: "https://mussabthgoat.netlify.app/games/swordsandsandals/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/swordsandsandals.jpg" },
+  { name: "swords and sandals 2", link: "https://mussabthgoat.netlify.app/games/swordsandsandals2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/swordsandsandals2.jpg" },
+  { name: "wordle", link: "https://mussabthgoat.netlify.app/games/wordle/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/wordle.jpg" },
+  { name: "vex", link: "https://mussabthgoat.netlify.app/games/vex/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vex.jpg" },
+  { name: "vex 2", link: "https://mussabthgoat.netlify.app/games/vex2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vex2.jpg" },
+  { name: "vex 5", link: "https://mussabthgoat.netlify.app/games/vex5/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vex5.jpg" },
+  { name: "vex 7", link: "https://mussabthgoat.netlify.app/games/vex7/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vex7.jpg" },
+  { name: "stack", link: "https://mussabthgoat.netlify.app/games/stack/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stack.jpg" },
+  { name: "skibidi toilet attack", link: "https://mussabthgoat.netlify.app/games/skibiditoiletattack/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/skibiditoiletattack.jpg" },
+  { name: "motox3m pool", link: "https://mussabthgoat.netlify.app/games/motox3mpool/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/motox3mpool.jpg" },
+  { name: "offline paradise", link: "https://mussabthgoat.netlify.app/games/offlineparadise/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/offlineparadise.jpg" },
+  { name: "link to the past", link: "https://mussabthgoat.netlify.app/games/linktothepast/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/linktothepast.jpg" },
+  { name: "donkey kong country", link: "https://mussabthgoat.netlify.app/games/donkeykongcountry/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/donkeykongcountry.jpg" },
+  { name: "donkey kong country 2", link: "https://mussabthgoat.netlify.app/games/donkeykongcountry2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/donkeykongcountry2.jpg" },
+  { name: "super bomberman", link: "https://mussabthgoat.netlify.app/games/superbomberman/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/superbomberman.jpg" },
+  { name: "mario paint", link: "https://mussabthgoat.netlify.app/games/mariopaint/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mariopaint.jpg" },
+  { name: "mega man x", link: "https://mussabthgoat.netlify.app/games/megamanx/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/megamanx.jpg" },
+  { name: "super mario rpg", link: "https://mussabthgoat.netlify.app/games/supermariorpg/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermariorpg.jpg" },
+  { name: "super tennis", link: "https://mussabthgoat.netlify.app/games/supertennis/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supertennis.jpg" },
+  { name: "wario's woods", link: "https://mussabthgoat.netlify.app/games/warioswoods/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/warioswoods.jpg" },
+  { name: "worlds hardest game 2", link: "https://mussabthgoat.netlify.app/games/worldshardestgame2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/worldshardestgame2.jpg" },
+  { name: "bubble tanks 2", link: "https://mussabthgoat.netlify.app/games/bubbletanks2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bubbletanks2.jpg" },
+  { name: "choose your weapon", link: "https://mussabthgoat.netlify.app/games/chooseyourweapon/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chooseyourweapon.jpg" },
+  { name: "choose your weapon 2", link: "https://mussabthgoat.netlify.app/games/chooseyourweapon2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chooseyourweapon2.jpg" },
+  { name: "choose your weapon 3", link: "https://mussabthgoat.netlify.app/games/chooseyourweapon3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chooseyourweapon3.jpg" },
+  { name: "connect 4", link: "https://mussabthgoat.netlify.app/games/connect4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/connect4.jpg" },
+  { name: "electric box", link: "https://mussabthgoat.netlify.app/games/electricbox/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/electricbox.jpg" },
+  { name: "mc tower defence 2", link: "https://mussabthgoat.netlify.app/games/mctowerdefence2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mctowerdefence2.jpg" },
+  { name: "cars 2", link: "https://mussabthgoat.netlify.app/games/cars2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cars2.jpg" },
+  { name: "cooking mama", link: "https://mussabthgoat.netlify.app/games/cookingmama/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cookingmama.jpg" },
+  { name: "adventure time", link: "https://mussabthgoat.netlify.app/games/adventuretime/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/adventuretimeheyiceking.jpg" },
+  { name: "garfield gets real", link: "https://mussabthgoat.netlify.app/games/garfieldgetsreal/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/garfieldgetsreal.jpg" },
+  { name: "warioware touched", link: "https://mussabthgoat.netlify.app/games/wariowaretouched/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/wariowaretouched.jpg" },
+  { name: "kirby power paintbrush", link: "https://mussabthgoat.netlify.app/games/kirbypowerpaintbrush/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/kirbypowerpaintbrush.jpg" },
+  { name: "sonic and knuckles", link: "https://mussabthgoat.netlify.app/games/sonicandknuckles/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sonicandknuckles.jpg" },
+  { name: "altered beast", link: "https://mussabthgoat.netlify.app/games/alteredbeast/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/alteredbeast.jpg" },
+  { name: "sonic spinball", link: "https://mussabthgoat.netlify.app/games/sonicspinball/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sonicspinball.jpg" },
+  { name: "sonic the hedgehog 3", link: "https://mussabthgoat.netlify.app/games/sonicthehedgehog3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sonicthehedgehog3.jpg" },
+  { name: "streets of rage", link: "https://mussabthgoat.netlify.app/games/streetsofrage/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/streetsofrage.jpg" },
+  { name: "golden axe", link: "https://mussabthgoat.netlify.app/games/goldenaxe/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/goldenaxe.jpg" },
+  { name: "kirby amazing mirror", link: "https://mussabthgoat.netlify.app/games/kirbyamazingmirror/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/kirbyamazingmirror.jpg" },
+  { name: "champion island", link: "https://mussabthgoat.netlify.app/games/championisland/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/championisland.jpg" },
+  { name: "super mario construct", link: "https://mussabthgoat.netlify.app/games/supermarioconstruct/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermarioconstruct.jpg" },
+  { name: "clicker heroes", link: "https://mussabthgoat.netlify.app/games/clickerheroes/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/clickerheroes.jpg" },
+  { name: "stair race 3d", link: "https://mussabthgoat.netlify.app/games/stairrace3d/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stairrace3d.jpg" },
+  { name: "slope 2", link: "https://mussabthgoat.netlify.app/games/slope2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/slope2.jpg" },
+  { name: "paper io 3d", link: "https://mussabthgoat.netlify.app/games/paperio3d/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/paperio3d.jpg" },
+  { name: "motox3m spooky", link: "https://mussabthgoat.netlify.app/games/motox3mspooky/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/motox3mspooky.jpg" },
+  { name: "motox3m winter", link: "https://mussabthgoat.netlify.app/games/motox3mwinter/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/motox3mwinter.jpg" },
+  { name: "snake", link: "https://mussabthgoat.netlify.app/games/snake/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/snake.jpg" },
+  { name: "papa's tacomia", link: "https://mussabthgoat.netlify.app/games/papastacomia/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papastacomia.jpg" },
+  { name: "ovo", link: "https://mussabthgoat.netlify.app/games/ovo/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ovo.jpg" },
+  { name: "knife hit", link: "https://mussabthgoat.netlify.app/games/knifehit/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/knifehit.jpg" },
+  { name: "cubefield", link: "https://mussabthgoat.netlify.app/games/cubefield/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cubefield.jpg" },
+  { name: "burger and frights", link: "https://mussabthgoat.netlify.app/games/burgerandfrights/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/burgerandfrights.jpg" },
+  { name: "chess", link: "https://mussabthgoat.netlify.app/games/chess/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chess.jpg" },
+  { name: "fnf mid fight masses", link: "https://mussabthgoat.netlify.app/games/fnfmidfight/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/midfightmasses.jpg" },
+  { name: "thumb fighter", link: "https://mussabthgoat.netlify.app/games/thumbfighter/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/thumbfighter.jpg" },
+  { name: "snow battle io", link: "https://mussabthgoat.netlify.app/games/snowbattleio/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/snowbattleio.jpg" },
+  { name: "lazy jump 3d", link: "https://mussabthgoat.netlify.app/games/lazyjump3d/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/lazyjump3d.jpg" },
+  { name: "go ball", link: "https://mussabthgoat.netlify.app/games/goball/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/goball.jpg" },
+  { name: "flippy fish", link: "https://mussabthgoat.netlify.app/games/flippyfish/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/flippyfish.jpg" },
+  { name: "shop empire", link: "https://mussabthgoat.netlify.app/games/shopempire/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shopempire.jpg" },
+  { name: "monster brawl", link: "https://mussabthgoat.netlify.app/games/monsterbrawl/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/monsterbrawl.jpg" },
+  { name: "multitask", link: "https://mussabthgoat.netlify.app/games/multitask/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/multitask.jpg" },
+  { name: "shift", link: "https://mussabthgoat.netlify.app/games/shift/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shift.jpg" },
+  { name: "shift 2", link: "https://mussabthgoat.netlify.app/games/shift2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shift2.jpg" },
+  { name: "shift 3", link: "https://mussabthgoat.netlify.app/games/shift3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shift3.jpg" },
+  { name: "shift 4", link: "https://mussabthgoat.netlify.app/games/shift4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shift4.jpg" },
+  { name: "monopoly", link: "https://mussabthgoat.netlify.app/games/monopoly/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/monopoly.jpg" },
+  { name: "picross ds", link: "https://mussabthgoat.netlify.app/games/picrossds/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/picrossds.jpg" },
+  { name: "warioware diy", link: "https://mussabthgoat.netlify.app/games/wariowarediy/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/wariowarediy.jpg" },
+  { name: "pizza tower", link: "https://mussabthgoat.netlify.app/games/pizzatower/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pizzatower.jpg" },
+  { name: "territorial io", link: "https://mussabthgoat.netlify.app/games/territorialio/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/territorialio.jpg" },
+  { name: "1v1lol", link: "https://mussabthgoat.netlify.app/games/1v1lol/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/1v1lol.jpg" },
+  { name: "ballistic chickens", link: "https://mussabthgoat.netlify.app/games/ballisticchickens/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ballisticchickens.jpg" },
+  { name: "basketbros io", link: "https://mussabthgoat.netlify.app/games/basketbrosio/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/basketbrosio.jpg" },
+  { name: "minecraft classic", link: "https://mussabthgoat.netlify.app/games/mcclassic/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mcclassic.jpg" },
+  { name: "death run 3d", link: "https://mussabthgoat.netlify.app/games/deathrun3d/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/deathrun3d.jpg" },
+  { name: "soccer random", link: "https://mussabthgoat.netlify.app/games/soccerrandom/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/soccerrandom.jpg" },
+  { name: "sprinter", link: "https://mussabthgoat.netlify.app/games/sprinter/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sprinter.jpg" },
+  { name: "tron", link: "https://mussabthgoat.netlify.app/games/tron/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/tron.jpg" },
+  { name: "1 on 1 soccer", link: "https://mussabthgoat.netlify.app/games/1on1soccer/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/1on1soccer.jpg" },
+  { name: "bad time simulator", link: "https://mussabthgoat.netlify.app/games/badtimesimulator/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/badtimesimulator.jpg" },
+  { name: "amazing rope police", link: "https://mussabthgoat.netlify.app/games/amazingropepolice/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/amazingropepolice.jpg" },
+  { name: "celeste", link: "https://mussabthgoat.netlify.app/games/celeste/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/celeste.jpg" },
+  { name: "just fall lol", link: "https://mussabthgoat.netlify.app/games/justfalllol/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/justfalllol.jpg" },
+  { name: "ngon", link: "https://mussabthgoat.netlify.app/games/ngon/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ngon.jpg" },
+  { name: "rocket soccer", link: "https://mussabthgoat.netlify.app/games/rocketsoccer/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/rocketsoccer.jpg" },
+  { name: "stickman climb", link: "https://mussabthgoat.netlify.app/games/stickmanclimb/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stickmanclimb.jpg" },
+  { name: "osu!mania", link: "https://mussabthgoat.netlify.app/games/osumania/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/osumania.jpg" },
+  { name: "helix jump", link: "https://mussabthgoat.netlify.app/games/helixjump/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/helixjump.jpg" },
+  { name: "dadish", link: "https://mussabthgoat.netlify.app/games/dadish/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/dadish.jpg" },
+  { name: "dadish 2", link: "https://mussabthgoat.netlify.app/games/dadish2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/dadish2.jpg" },
+  { name: "dadish 3", link: "https://mussabthgoat.netlify.app/games/dadish3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/dadish3.jpg" },
+  { name: "snow rider 3d", link: "https://mussabthgoat.netlify.app/games/snowrider3d/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/snowrider3d.jpg" },
+  { name: "tube jumpers", link: "https://mussabthgoat.netlify.app/games/tubejumpers/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/tubejumpers.jpg" },
+  { name: "yohoho io", link: "https://mussabthgoat.netlify.app/games/yohoho/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/yohoho.jpg" },
+  { name: "10 minutes till dawn", link: "https://mussabthgoat.netlify.app/games/10minutestilldawn/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/10minutestilldawn.jpg" },
+  { name: "volley random", link: "https://mussabthgoat.netlify.app/games/volleyrandom/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/volleyrandom.jpg" },
+  { name: "waterworks", link: "https://mussabthgoat.netlify.app/games/waterworks/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/waterworks.jpg" },
+  { name: "geometry rash", link: "https://mussabthgoat.netlify.app/games/geometryrash/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/geometryrash.jpg" },
+  { name: "hole io", link: "https://mussabthgoat.netlify.app/games/holeio/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/holeio.jpg" },
+  { name: "sandtrix", link: "https://mussabthgoat.netlify.app/games/sandtrix/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sandtrix.jpg" },
+  { name: "shapeshipper", link: "https://mussabthgoat.netlify.app/games/shapeshipper/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shapeshipper.jpg" },
+  { name: "slope ball", link: "https://mussabthgoat.netlify.app/games/slopeball/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/slopeball.jpg" },
+  { name: "stickman golf", link: "https://mussabthgoat.netlify.app/games/stickmangolf/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stickmangolf.jpg" },
+  { name: "totally accurate battle sim", link: "https://mussabthgoat.netlify.app/games/tabs/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/totallyaccuratebattlesim.jpg" },
+  { name: "watermelon game", link: "https://mussabthgoat.netlify.app/games/watermelongame/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/watermelongame.jpg" },
+  { name: "wall smash", link: "https://mussabthgoat.netlify.app/games/wallsmash/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/wallsmash.jpg" },
+  { name: "crimson fantasia", link: "https://mussabthgoat.netlify.app/games/crimsonfantasia/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/crimsonfantasia.jpg" },
+  { name: "cut the rope", link: "https://mussabthgoat.netlify.app/games/cuttherope/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cuttherope.jpg" },
+  { name: "funny mad racing", link: "https://mussabthgoat.netlify.app/games/funnymadracing/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/funnymadracing.jpg" },
+  { name: "geometry dash lite", link: "https://mussabthgoat.netlify.app/games/gdlite/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/geometrydashlite.jpg" },
+  { name: "grand theft grotto", link: "https://mussabthgoat.netlify.app/games/grandtheftgrotto/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/grandtheftgrotto.jpg" },
+  { name: "drift mania", link: "https://mussabthgoat.netlify.app/games/driftmania/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/driftmania.jpg" },
+  { name: "rise higher", link: "https://mussabthgoat.netlify.app/games/risehigher/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/risehigher.jpg" },
+  { name: "burrito bison", link: "https://mussabthgoat.netlify.app/games/burritobison/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/burritobison.jpg" },
+  { name: "pool", link: "https://mussabthgoat.netlify.app/games/pool/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pool.jpg" },
+  { name: "redball", link: "https://mussabthgoat.netlify.app/games/redball1/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/redball.jpg" },
+  { name: "redball 3", link: "https://mussabthgoat.netlify.app/games/redball3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/redball3.jpg" },
+  { name: "redball 4", link: "https://mussabthgoat.netlify.app/games/redball4/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/redball4.jpg" },
+  { name: "redball 4 vol 2", link: "https://mussabthgoat.netlify.app/games/redballv2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/redball4vol2.jpg" },
+  { name: "redball 4 vol 3", link: "https://mussabthgoat.netlify.app/games/redballv3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/redball4vol3.jpg" },
+  { name: "rough dino", link: "https://mussabthgoat.netlify.app/games/roughdino/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/roughdino.jpg" },
+  { name: "time shooter", link: "https://mussabthgoat.netlify.app/games/timeshooter1/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/timeshooter.jpg" },
+  { name: "time shooter 2", link: "https://mussabthgoat.netlify.app/games/timeshooter2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/timeshooter2.jpg" },
+  { name: "time shooter 3", link: "https://mussabthgoat.netlify.app/games/timeshooter3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/timeshooter3.jpg" },
+  { name: "battletoads", link: "https://mussabthgoat.netlify.app/games/battletoads/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/battletoads.jpg" },
+  { name: "castlevania", link: "https://mussabthgoat.netlify.app/games/castlevaniaiii/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/castlevania.jpg" },
+  { name: "contra", link: "https://mussabthgoat.netlify.app/games/contra/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/contra.jpg" },
+  { name: "duck tales", link: "https://mussabthgoat.netlify.app/games/ducktales/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ducktales.jpg" },
+  { name: "kid icarus", link: "https://mussabthgoat.netlify.app/games/kidicarus/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/kidicarus.jpg" },
+  { name: "mega man 2", link: "https://mussabthgoat.netlify.app/games/megaman2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/megaman2.jpg" },
+  { name: "ninja gaiden", link: "https://mussabthgoat.netlify.app/games/ninjagaiden/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ninjagaiden.jpg" },
+  { name: "punch out", link: "https://mussabthgoat.netlify.app/games/punchout/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mikestysonspunchout.jpg" },
+  { name: "chrono trigger", link: "https://mussabthgoat.netlify.app/games/chronotrigger/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chronotrigger.jpg" },
+  { name: "contra iii", link: "https://mussabthgoat.netlify.app/games/contraiii/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/contraiii.jpg" },
+  { name: "donkey kong country 3", link: "https://mussabthgoat.netlify.app/games/donkeykongcountry3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/donkeykongcountry3.jpg" },
+  { name: "earthbound", link: "https://mussabthgoat.netlify.app/games/earthbound/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/earthbound.jpg" },
+  { name: "final fantasy iv", link: "https://mussabthgoat.netlify.app/games/finalfantasyvi/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/finalfantasyiv.jpg" },
+  { name: "f-zero", link: "https://mussabthgoat.netlify.app/games/fzero/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fzero.jpg" },
+  { name: "super metroid", link: "https://mussabthgoat.netlify.app/games/supermetroid/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermetroid.jpg" },
+  { name: "banjo tooie", link: "https://mussabthgoat.netlify.app/games/banjotooie/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/banjotooie.jpg" },
+  { name: "harvest moon 64", link: "https://mussabthgoat.netlify.app/games/harvestmoon64/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/harvestmoon64.jpg" },
+  { name: "jet force gemini", link: "https://mussabthgoat.netlify.app/games/jetforcegemini/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/jetforcegemini.jpg" },
+  { name: "mystical ninja", link: "https://mussabthgoat.netlify.app/games/mysticalninja/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mysticalninja.jpg" },
+  { name: "turok dinosaur hunter", link: "https://mussabthgoat.netlify.app/games/turokdinosaurhunter/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/turokdinosaurhunter.jpg" },
+  { name: "yoshi's story", link: "https://mussabthgoat.netlify.app/games/yoshisstory/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/yoshisstory.jpg" },
+  { name: "kirby's dreamland 2", link: "https://mussabthgoat.netlify.app/games/kirbysdreamland2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/kirbysdreamland2.jpg" },
+  { name: "link's awakening dx", link: "https://mussabthgoat.netlify.app/games/linksawakeningdx/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/linksawakeningdx.jpg" },
+  { name: "metroid ii", link: "https://mussabthgoat.netlify.app/games/metroidii/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/metroidii.jpg" },
+  { name: "super mario land 2", link: "https://mussabthgoat.netlify.app/games/supermarioland2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supermarioland2.jpg" },
+  { name: "wario land ii", link: "https://mussabthgoat.netlify.app/games/wariolandii/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/wariolandii.jpg" },
+  { name: "castlevania aria of sorrow", link: "https://mussabthgoat.netlify.app/games/castlevaniaariaofsorrow/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/castlevaniaariaofsorrow.jpg" },
+  { name: "final fantasy tactics adv", link: "https://mussabthgoat.netlify.app/games/finalfantasytacticsadvance/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/finalfantasytacticsadventure.jpg" },
+  { name: "drill dozer", link: "https://mussabthgoat.netlify.app/games/drilldozer/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/drilldozer.jpg" },
+  { name: "advance wars days of ruin", link: "https://mussabthgoat.netlify.app/games/advancewarsdayofruin/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/advancewarsdaysofruin.jpg" },
+  { name: "castlevania dawn of sorrow", link: "https://mussabthgoat.netlify.app/games/castlevaniadawnofsorrow/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/castlevaniadawnofsorrow.jpg" },
+  { name: "order of ecclesia", link: "https://mussabthgoat.netlify.app/games/castlevaniaorderofecclesia/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/castlevaniaorderofecclesia.jpg" },
+  { name: "partners in time", link: "https://mussabthgoat.netlify.app/games/marioandluigipartnersintime/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/marioandluigipartnersintime.jpg" },
+  { name: "comix zone", link: "https://mussabthgoat.netlify.app/games/comixzone/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/comixzone.jpg" },
+  { name: "ecco the dolphin", link: "https://mussabthgoat.netlify.app/games/eccothedolphin/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/eccothedolphin.jpg" },
+  { name: "gunstar heroes", link: "https://mussabthgoat.netlify.app/games/gunstarheroes/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/gunstarheroes.jpg" },
+  { name: "phantasy star iv", link: "https://mussabthgoat.netlify.app/games/phantasystariv/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/phantasystariv.jpg" },
+  { name: "ranger x", link: "https://mussabthgoat.netlify.app/games/rangerx/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/rangerx.jpg" },
+  { name: "ristar", link: "https://mussabthgoat.netlify.app/games/ristar/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ristar.jpg" },
+  { name: "shining force", link: "https://mussabthgoat.netlify.app/games/shiningforce/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shiningforce.jpg" },
+  { name: "shinobi iii", link: "https://mussabthgoat.netlify.app/games/shinobiiii/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shinobiiii.jpg" },
+  { name: "sonic the hedgehog", link: "https://mussabthgoat.netlify.app/games/sonicthehedgehog/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sonicthehedgehog.jpg" },
+  { name: "sonic the hedgehog 2", link: "https://mussabthgoat.netlify.app/games/sonicthehedgehog2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sonicthehedgehog2.jpg" },
+  { name: "streets of rage 2", link: "https://mussabthgoat.netlify.app/games/streetsofrage2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/streetsofrage2.jpg" },
+  { name: "vectorman", link: "https://mussabthgoat.netlify.app/games/vectorman/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vectorman.jpg" },
+  { name: "vectorman 2", link: "https://mussabthgoat.netlify.app/games/vectorman2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/vectorman2.jpg" },
+  { name: "illusion of gaia", link: "https://mussabthgoat.netlify.app/games/illusionofgaia/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/illusionofgaia.jpg" },
+  { name: "pokemon yellow", link: "https://mussabthgoat.netlify.app/games/pokemonyellow/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pokemonyellow.jpg" },
+  { name: "abuda the alien", link: "https://mussabthgoat.netlify.app/games/abudathealien/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/abudathealien.jpg" },
+  { name: "battle beavers", link: "https://mussabthgoat.netlify.app/games/battlebeavers/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/battlebeavers.jpg" },
+  { name: "control craft 2", link: "https://mussabthgoat.netlify.app/games/controlcraft2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/controlcraft2.jpg" },
+  { name: "age of war", link: "https://mussabthgoat.netlify.app/games/ageofwar/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ageofwar.jpg" },
+  { name: "age of war 2", link: "https://mussabthgoat.netlify.app/games/ageofwar2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ageofwar2.jpg" },
+  { name: "amorphous", link: "https://mussabthgoat.netlify.app/games/amorphous/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/amorphous.jpg" },
+  { name: "bubble spinner", link: "https://mussabthgoat.netlify.app/games/bubblespinner/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bubblespinner.jpg" },
+  { name: "crush the castle", link: "https://mussabthgoat.netlify.app/games/crushthecastle/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/crushthecastle.jpg" },
+  { name: "crush the castle 2", link: "https://mussabthgoat.netlify.app/games/crushthecastle2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/crushthecastle2.jpg" },
+  { name: "epic battle fantasy", link: "https://mussabthgoat.netlify.app/games/epicbattlefantasy/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/epicbattlefantasy.jpg" },
+  { name: "epic battle fantasy 2", link: "https://mussabthgoat.netlify.app/games/epicbattlefantasy2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/epicbattlefantasy2.jpg" },
+  { name: "epic battle fantasy 3", link: "https://mussabthgoat.netlify.app/games/epicbattlefantasy3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/epicbattlefantasy3.jpg" },
+  { name: "fancy pants adventure 3", link: "https://mussabthgoat.netlify.app/games/fancypantsadventure3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/fancypantsadventure3.jpg" },
+  { name: "flood runner 2", link: "https://mussabthgoat.netlify.app/games/floodrunner2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/floodrunner2.jpg" },
+  { name: "flood runner 3", link: "https://mussabthgoat.netlify.app/games/floodrunner3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/floodrunner3.jpg" },
+  { name: "dragon boy 2", link: "https://mussabthgoat.netlify.app/games/dragonboy2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/dragonboy2.jpg" },
+  { name: "neon rider", link: "https://mussabthgoat.netlify.app/games/neonrider/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/neonrider.jpg" },
+  { name: "pandemic 2", link: "https://mussabthgoat.netlify.app/games/pandemic2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pandemic2.jpg" },
+  { name: "stick war", link: "https://mussabthgoat.netlify.app/games/stickwar/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stickwar.jpg" },
+  { name: "stick war 2", link: "https://mussabthgoat.netlify.app/games/stickwar2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stickwar2.jpg" },
+  { name: "ultimate flash sonic", link: "https://mussabthgoat.netlify.app/games/ultimateflashsonic/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ultimateflashsonic.jpg" },
+  { name: "zombocalypse", link: "https://mussabthgoat.netlify.app/games/zombocalypse/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/zombocalpyse.jpg" },
+  { name: "zombotron", link: "https://mussabthgoat.netlify.app/games/zombotron/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/zombotron.jpg" },
+  { name: "zombotron 2", link: "https://mussabthgoat.netlify.app/games/zombotron2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/zombotron2.jpg" },
+  { name: "backrooms 2d", link: "https://mussabthgoat.netlify.app/games/backrooms2d/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/backrooms2d.jpg" },
+  { name: "basket random", link: "https://mussabthgoat.netlify.app/games/basketrandom/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/basketrandom.jpg" },
+  { name: "csgo clicker", link: "https://mussabthgoat.netlify.app/games/csgoclicker/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/csgoclicker.jpg" },
+  { name: "doom", link: "https://mussabthgoat.netlify.app/games/doom/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/doom.jpg" },
+  { name: "funny shooter 2", link: "https://mussabthgoat.netlify.app/games/funnyshooter2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/funnyshooter2.jpg" },
+  { name: "gun fest", link: "https://mussabthgoat.netlify.app/games/gunfest/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/gunfest.jpg" },
+  { name: "infinite craft", link: "https://mussabthgoat.netlify.app/games/infinitecraft/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/infinitecraft.jpg" },
+  { name: "lows adventures 2", link: "https://mussabthgoat.netlify.app/games/lowsadventures2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/lowsadventures2.jpg" },
+  { name: "pako highway", link: "https://mussabthgoat.netlify.app/games/pakohighway/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pakohighway.jpg" },
+  { name: "recoil", link: "https://mussabthgoat.netlify.app/games/recoil/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/recoil.jpg" },
+  { name: "run 3 plus", link: "https://mussabthgoat.netlify.app/games/run3plus/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/run3plus.jpg" },
+  { name: "slope city", link: "https://mussabthgoat.netlify.app/games/slopecity/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/slopecity.jpg" },
+  { name: "state io", link: "https://mussabthgoat.netlify.app/games/stateio/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/stateio.jpg" },
+  { name: "sudoku", link: "https://mussabthgoat.netlify.app/games/sudoku/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/sudoku.jpg" },
+  { name: "superhero drop", link: "https://mussabthgoat.netlify.app/games/superherodrop/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/superherodrop.jpg" },
+  { name: "balloon run", link: "https://mussabthgoat.netlify.app/games/balloonrun/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/balloonrun.jpg" },
+  { name: "crazy tunnel 3d", link: "https://mussabthgoat.netlify.app/games/crazytunnel3d/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/crazytunnel3d.jpg" },
+  { name: "minecraft [v1.8]", link: "https://mussabthgoat.netlify.app/games/eagler1.8/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mc1.8.jpg" },
+  { name: "geometry dash sky", link: "https://mussabthgoat.netlify.app/games/geometrydashsky/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/geometrydashsky.jpg" },
+  { name: "wubzzys adventure", link: "https://mussabthgoat.netlify.app/games/wubzzysamazingadventure/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/wubzzysamazingadventure.jpg" },
+  { name: "gold digger frvr", link: "https://mussabthgoat.netlify.app/games/golddiggerfrvr/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/golddiggerfrvr.jpg" },
+  { name: "hexgl", link: "https://mussabthgoat.netlify.app/games/hexgl/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/hexgl.jpg" },
+  { name: "house of hazards", link: "https://mussabthgoat.netlify.app/games/houseofhazards/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/houseofhazards.jpg" },
+  { name: "pick crafter", link: "https://mussabthgoat.netlify.app/games/pickcrafter/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/pickcrafter.jpg" },
+  { name: "precision client", link: "https://mussabthgoat.netlify.app/games/precisionclient/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/precisionclient.jpg" },
+  { name: "subway runner", link: "https://mussabthgoat.netlify.app/games/subwayrunner/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/subwayrunner.jpg" },
+  { name: "xx142-b2.exe", link: "https://mussabthgoat.netlify.app/games/xx142-b2.exe/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/xx142b2.exe.jpg" },
+  { name: "canopy", link: "https://mussabthgoat.netlify.app/games/canopy/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/canopy.jpg" },
+  { name: "cave chaos", link: "https://mussabthgoat.netlify.app/games/cavechaos/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cavechaos.jpg" },
+  { name: "change type", link: "https://mussabthgoat.netlify.app/games/changetype/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/changetype.jpg" },
+  { name: "cheese dreams", link: "https://mussabthgoat.netlify.app/games/cheesedreams/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cheesedreams.jpg" },
+  { name: "chisel", link: "https://mussabthgoat.netlify.app/games/chisel/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chisel.jpg" },
+  { name: "chisel 2", link: "https://mussabthgoat.netlify.app/games/chisel2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/chisel2.jpg" },
+  { name: "ditto", link: "https://mussabthgoat.netlify.app/games/ditto/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/ditto.jpg" },
+  { name: "feed me", link: "https://mussabthgoat.netlify.app/games/feedme/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/feedme.jpg" },
+  { name: "final ninja", link: "https://mussabthgoat.netlify.app/games/finalninja/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/finalninja.jpg" },
+  { name: "frost bite", link: "https://mussabthgoat.netlify.app/games/frostbite/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/frostbite.jpg" },
+  { name: "frost bite 2", link: "https://mussabthgoat.netlify.app/games/frostbite2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/frostbite2.jpg" },
+  { name: "icebreaker", link: "https://mussabthgoat.netlify.app/games/icebreaker/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/icebreaker.jpg" },
+  { name: "mutiny", link: "https://mussabthgoat.netlify.app/games/mutiny/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/mutiny.jpg" },
+  { name: "nitrome must die", link: "https://mussabthgoat.netlify.app/games/nitromemustdie/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/nitromemustdie.jpg" },
+  { name: "oodlegobs", link: "https://mussabthgoat.netlify.app/games/oodlegobs/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/oodlegobs.jpg" },
+  { name: "super treadmill", link: "https://mussabthgoat.netlify.app/games/supertreadmill/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/supertreadmill.jpg" },
+  { name: "swindler", link: "https://mussabthgoat.netlify.app/games/swindler/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/swindler.jpg" },
+  { name: "test subject arena", link: "https://mussabthgoat.netlify.app/games/testsubjectarena/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/testsubjectarena.jpg" },
+  { name: "test subject complete", link: "https://mussabthgoat.netlify.app/games/testsubjectcomplete/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/testsubjectcomplete.jpg" },
+  { name: "twin shot", link: "https://mussabthgoat.netlify.app/games/twinshot/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/twinshot.jpg" },
+  { name: "twin shot 2", link: "https://mussabthgoat.netlify.app/games/twinshot2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/twinshot2.jpg" },
+  { name: "three line", link: "https://mussabthgoat.netlify.app/games/3line/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/threeline.jpg" },
+  { name: "bike champ", link: "https://mussabthgoat.netlify.app/games/bikechamp/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bikechamp.jpg" },
+  { name: "bike champ 2", link: "https://mussabthgoat.netlify.app/games/bikechamp2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/bikechamp2.jpg" },
+  { name: "corporation inc", link: "https://mussabthgoat.netlify.app/games/corporationinc/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/corporationinc.jpg" },
+  { name: "shop empire fable", link: "https://mussabthgoat.netlify.app/games/shopempirefable/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/shopempirefable.jpg" },
+  { name: "cactus mccoy", link: "https://mussabthgoat.netlify.app/games/cactusmccoy/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cactusmccoy.jpg" },
+  { name: "cactus mccoy 2", link: "https://mussabthgoat.netlify.app/games/cactusmccoy2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/cactusmccoy2.jpg" },
+  { name: "papa louie", link: "https://mussabthgoat.netlify.app/games/papalouie/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papalouie.jpg" },
+  { name: "papa louie 2", link: "https://mussabthgoat.netlify.app/games/papalouie2/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papalouie2.jpg" },
+  { name: "papa louie 3", link: "https://mussabthgoat.netlify.app/games/papalouie3/index.html", image: "https://mussabthgoat.netlify.app/images/thumbnails/papalouie3.jpg" },
+    ];
+</script>
+<body>
+
+</body>
+<script>
+function searching(input) {
+    let val = input.value.toLowerCase();
+    let results = document.getElementById("search-results");
+    results.innerHTML = '';
+    if(val===''){
+        results.style.display = "none";
+    }
+    else{
+        results.style.display = "block";
+    }
+
+    games.forEach(game => {
+        if (game.name.toLowerCase().includes(val)) {
+            let a = document.createElement("a");
+            a.href = game.link;
+            a.textContent = game.name;
+            results.appendChild(a);
+        }
+    });
+}
+function fun(input){
+     let results = document.getElementById("search-results");
+    results.innerHTML = '';
+    if(input.value===''){
+        results.style.display = "none";
+    }
+    else{
+        results.style.display = "block";
+    }
+}
+
+
+document.getElementById("hide").addEventListener("click", function() {
+  var element = document.getElementById("search-box");
+  if (element.style.display === "none") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+});
+
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+window.onload = function() {
+    const gameContainer = document.getElementById('game-container');
+    games.forEach(game => {
+        const gameElement = document.createElement('a');
+        gameElement.href = game.link;
+        gameElement.className = 'game-link';
+
+        const tile = document.createElement('div');
+        tile.className = 'game-tile';
+
+        const img = document.createElement('img');
+        img.className = 'game-icon';
+        img.src = game.image;
+        img.alt = 'icon';
+
+        const title = document.createElement('h1');
+        title.className = 'game-title';
+        title.textContent = game.name;
+
+        tile.appendChild(img);
+        tile.appendChild(title);
+        gameElement.appendChild(tile);
+        gameContainer.appendChild(gameElement);
+    });
+};
+</script>
+</body>
+</html>
