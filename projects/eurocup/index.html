@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Embedded Soccer Game</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+            width: 100vw;
+            height: 100vh;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="gameFrame" src="https://gms.parcoil.com/soccer-skills/"></iframe>
+
+    <script>
+        document.addEventListener("touchmove", function(event) {
+            event.preventDefault(); // Prevent touch scrolling
+        }, { passive: false });
+
+        document.addEventListener("wheel", function(event) {
+            event.preventDefault(); // Prevent zooming via mouse wheel
+        }, { passive: false });
+    </script>
+</body>
+</html>
