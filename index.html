@@ -58,15 +58,16 @@
     <script src="JS/clock.js"></script>
     <script src="JS/search.js"></script>
     <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js').then(() => {
-          console.log('Service Worker registered');
-        }).catch(error => {
-          console.error('Service Worker registration failed:', error);
-        });
-      }
-	    
-    </script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => {
+        console.log('✅ Service Worker registered!');
+      })
+      .catch(error => {
+        console.error('❌ Service Worker registration failed:', error);
+      });
+  }
+</script>
         <div class="nav-container">
             <div class="search-container">
                 <input class="search-box" id="search-box" type="search"  onkeyup="searching(this)" onfocus="fun(this)" placeholder="Search for Games">
