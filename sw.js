@@ -12,8 +12,7 @@ const PRECACHE_ASSETS = [
   'projects/2048/thumb.png',
   'projects/tinyfishing/index.html',
   'projects/tinyfishing/icon.png',
-
-  // All files in tinyfishing/html5game
+  'projects/eurocup/index.html',
   'projects/tinyfishing/html5game/TinyFishing.js',
   'projects/tinyfishing/html5game/TinyFishing_texture_0.png',
   'projects/tinyfishing/html5game/TinyFishing_texture_1.png',
