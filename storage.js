@@ -1,4 +1,3 @@
-// IndexedDB game file storage
 const DB_NAME = 'offline-games-db';
 const STORE_NAME = 'files';
 
@@ -37,4 +36,15 @@ async function getFileFromIndexedDB(url) {
     };
     request.onerror = () => reject(request.error);
   });
+}
+
+function launchOfflineGame(file) {
+  getFileFromIndexedDB(file)
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      window.location.href = url;
+    })
+    .catch(() => {
+      alert("This game isn't available offline yet. Play it online first.");
+    });
 }
