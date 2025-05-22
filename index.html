@@ -939,5 +939,23 @@ window.onload = function() {
     });
 };
 </script>
+<script src="storage.js"></script>
+<script>
+  const games = [
+    'projects/tinyfishing/index.html',
+    'projects/tinyfishing/icon.png',
+    'projects/tinyfishing/html5game/TinyFishing.js',
+    'projects/tinyfishing/html5game/TinyFishing_texture_0.png',
+    'projects/tinyfishing/html5game/TinyFishing_texture_1.png',
+    'projects/tinyfishing/html5game/TinyFishing_texture_2.png',
+    'projects/tinyfishing/html5game/TinyFishing_texture_3.png',
+    'projects/tinyfishing/html5game/TinyFishing_texture_4.png',
+    'projects/tinyfishing/html5game/snd_musicBackground.ogg'
+  ];
+
+  if (navigator.onLine) {
+    games.forEach(file => saveFileToIndexedDB(file));
+  }
+</script>
 </body>
 </html>
