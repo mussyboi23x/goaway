@@ -21,7 +21,6 @@ async function saveFileToIndexedDB(url) {
   const db = await openDB();
   const tx = db.transaction(STORE_NAME, 'readwrite');
   tx.objectStore(STORE_NAME).put(blob, url);
-  await tx.complete;
   console.log(`✅ Saved ${url} to IndexedDB`);
 }
 
