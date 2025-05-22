@@ -2,18 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Offline</title>
+  <title>Offline Mode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body { font-family: Arial; text-align: center; padding: 40px; }
-    h1 { color: #444; }
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      text-align: center;
+      background: url('/wooden-board.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-shadow: 1px 1px 4px black;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
   </style>
 </head>
 <body>
-  <h1>You’re offline</h1>
-  <p>You can still play these games:</p>
-  <ul>
-    <li><a href="projects/2048/index.html">2048</a></li>
-    <li><a href="projects/tinyfishing/index.html">Tiny Fishing</a></li>
-  </ul>
+  <h1>You're Offline</h1>
+  <p>You can still play these games offline:</p>
+
+  <button onclick="launchOfflineGame('projects/tinyfishing/index.html')">Play Tiny Fishing</button>
+  <button onclick="launchOfflineGame('projects/2048/index.html')">Play 2048</button>
+  <button onclick="launchOfflineGame('projects/eurocup/index.html')">Play Euro Cup</button>
+
+  <script src="storage.js"></script>
 </body>
 </html>
+
